@@ -28,7 +28,7 @@ Here is the list of the column description:
 
 ## Analyzing Data Distribution
 
-By visualizing the distribution of `lender_count` variable, we can find which range has the highest frequency of data occurrence. Say we are interested in finding out the range of `lender_count` which is most likely to occur, for all loans in the United States. Therefore, the first thing we need to do is to filter the data so it only contains all loans from the United States. After the data is ready, you can make a plot to visualize the data. You may need to check the distribution of the `lender_count` variable using a histogram or density chart.
+By visualizing the distribution of numerical variable, we can find which range has the highest frequency of data occurrence. Say we are interested in finding out the range of `lender_count` which is most likely to occur, for all loans in the United States. Therefore, the first thing we need to do is to filter the data so it only contains all loans from the United States. After the data is ready, you can make a plot to visualize the data. You may need to check the distribution of the `lender_count` variable using a histogram or density chart.
 
    First, you need to subset all loans from the United States:
 ```

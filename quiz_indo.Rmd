@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization Quiz"
 author: "Arga Adyatama"
-date: "1/15/2020"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Kuis ini merupakan bagian dari proses penilaian *Algoritma Academy*. Selamat anda sudah menyelesaikan materi *Programming for Data Science* dan *Practical Statistics*! Kami akan melakukan penilaian berupa kuis untuk menguji materi yang sudah dipelajari. Pengerjaan kuis diharapkan dapat dilakukan di dalam kelas. Silakan hubungi tim instruktur kami jika Anda melewatkan kesempatan untuk mengambilnya di kelas.
+Kuis ini merupakan bagian dari proses penilaian *Algoritma Academy*. Selamat anda sudah menyelesaikan materi *Data Visualization*! Kami akan melakukan penilaian berupa kuis untuk menguji materi yang sudah dipelajari. Pengerjaan kuis diharapkan dapat dilakukan di dalam kelas. Silakan hubungi tim instruktur kami jika Anda melewatkan kesempatan untuk mengambilnya di kelas.
 
 ## Dataset
 
@@ -40,7 +40,7 @@ Gunakan informasi berikut untuk keterangan dari setiap kolom:
 
 ## Analisis Distribusi Data
 
-1. Dengan memvisualisasikan distribusi data dari variabel `lender_count`, kita dapat mengetahui interval nilai mana yang memiliki frekuensi paling banyak/paling sering mucul pada data. Katakanlah kita tertarik untuk mencari interval nilai dari `lender_count` (jumlah pemberi pinjaman) yang paling sering muncul untuk semua jenis pinjaman di Amerika Serikat (*United States*). Cek distribusinya dengan menggunakan histogram atau density chart!
+1. Dengan memvisualisasikan distribusi data dari variabel numerik, kita dapat mengetahui interval nilai yang memiliki frekuensi kemunculan data paling tinggi/paling sering muncul. Katakanlah kita tertarik untuk mencari interval nilai dari `lender_count` (jumlah pemberi pinjaman) yang paling sering muncul di Amerika Serikat (*United States*). Cek distribusinya dengan menggunakan histogram atau density chart!
 
 Pertama, lakukan subsetting data sehingga hanya tersisa data dari Amerika Serikat (*United States*):
 ```{r}
@@ -52,7 +52,7 @@ Kemudian, lakukan visualisasi untuk melihat distribusi data dari `lender_count`.
 # your code here
 ```
 
-Pada range nilai berapa `lender_count` di *United States* paling sering muncul pada data/memiliki frekuensi data yang tertinggi?
+Pada interval nilai berapa `lender_count` di *United States* memiliki frekuensi data paling banyak/paling sering muncul?
    
    - [ ] 0-100
    - [ ] 100-200
@@ -62,7 +62,7 @@ Pada range nilai berapa `lender_count` di *United States* paling sering muncul p
 
 Kita tertarik untuk melakukan analisis pada pinjaman yang berasal dari sektor manufaktur (*Manufacturing*) dari semua negara. Kita ingin melihat hubungan atau pola yang terbentuk antara jumlah uang yang dipinjam (`loan_amount`) dengan jumlah pemberi pinjaman (`lender_count`). Kita dapat menggunakan scatter plot untuk menganalisanya.
 
-Pertama-tama, lakukan subsetting ke data awal sehingga hanya terdapat data dari sektor *Manufacturing*:
+Pertama-tama, lakukan subsetting dari *data awal* sehingga hanya terdapat data dari sektor *Manufacturing*:
 ```{r}
 # your code here
 ```
@@ -95,7 +95,7 @@ Kemudian, buat scatter plot untuk melihat apakah terdapat pola antara jumlah uan
 
 ## Menggunakan Line Chart untuk Analisis Trend
 
-Perhatikan kasus berikut: Salah satu dari data analis di Kiva ditugaskan untuk membuat sebuah analisis terhadap durasi waktu antara waktu pinjaman pertama kali diposting hingga waktu pinjaman terbiayai sepenuhnya (waktu pembiayaan), untuk tiap jangka waktu pengembalian (`repayment interval`), di negara Guatemala. Analis kemudian mencoba memvisualisasikan trend bulanan dari rata-rata waktu pembiayaan tersebut dalam satuan jam. Berikut ilustrasi dari hasil akhir pekerjaan analis tersebut:
+Perhatikan kasus berikut: Salah satu data analis di Kiva ditugaskan untuk membuat sebuah analisis tentang durasi waktu antara waktu pinjaman pertama kali diposting hingga waktu pinjaman terbiayai sepenuhnya (*funding duration*), untuk tiap jangka waktu pengembalian (`repayment interval`), di negara Guatemala. Analis kemudian mencoba memvisualisasikan trend bulanan dari rata-rata *funding duration* tersebut dalam satuan jam. Berikut ilustrasi dari hasil akhir pekerjaan analis tersebut:
 
 ```{r echo=FALSE, out.width="80%"}
 knitr::include_graphics("guatemala.png")
@@ -103,14 +103,14 @@ knitr::include_graphics("guatemala.png")
 
 Tugas Anda adalah mereplikasi plot yang dihasilkan oleh analisis tersebut untuk negara **Philippines**.
 
-Untuk melakukan analisis trend, pertama-tama kita subset data yang kita miliki sehingga hanya menyimpan data dari negara `Philippines`. Kita juga perlu mengubah setiap data yang berhubungan dengan waktu menjadi format tanggal dan waktu yang tepat. Gunakan package `lubridate` untuk mengolah tipe data waktu.
+Untuk melakukan analisis trend, pertama-tama kita subset data yang kita miliki sehingga hanya menyimpan data dari negara `Philippines`. Kita juga perlu mengubah setiap data yang berhubungan dengan tanggal dan waktu ke tipe data yang tepat. Gunakan package `lubridate` untuk mengolah tipe data tanggal dan waktu.
 
 ```{r}
 library(lubridate)
 # your code here
 ```
 
-Untuk tahap eksplorasi, carilah range dari waktu posting pinjaman (`posted time`).
+Untuk tahap eksplorasi, carilah rentang nilai dari `posted time`:
 
 ```{r}
 # insert your code here
@@ -120,10 +120,10 @@ Untuk tahap eksplorasi, carilah range dari waktu posting pinjaman (`posted time`
 
    - [ ] 2015-01-01 01:27:00 UTC and 2015-12-31 05:54:25 UTC
    - [ ] 2015-01-01 03:34:51 UTC and 2015-12-31 05:54:25 UTC
-   - [ ] 2015-01-01 01:27:00 UTC and 2015-12-31 23:04:04 UTC
+   - [ ] 2015-01-01 01:27:00 UTC and 2015-12-31 14:44:55 UTC
    - [ ] 2015-01-01 00:42:30 UTC and 2015-12-31 05:54:25 UTC
 
-Setelah tipe data sesuai, kita dapat melakukan perhitungan untuk durasi waktu pembiayaan. Buat kolom baru bernama `funding_duration` yang berisi selisih waktu antara `funded time` dan `posted time` menggunakan function `difftime()` dan pastikan agar satuan waktunya adalah jam (hour).
+Setelah tipe data sesuai, kita dapat melakukan perhitungan untuk *funding duration*. Buat kolom baru bernama `funding_duration` yang berisi selisih waktu antara `funded time` dan `posted time` menggunakan function `difftime()` dan pastikan agar satuan waktunya adalah jam (hour).
 
 Sebagai alternatif, Anda juga dapat menggunakan pengurangan sederhana antara dua variabel tersebut. Hasilnya akan memiliki tipe data `time` dalam satuan menit. Kita perlu mengubahnya menjadi data `numerik` dan membaginya dengan 60 untuk mendapatkan waktu dalam satuan jam.
 
@@ -137,19 +137,19 @@ Karena kita ingin melihat rata-rata `funding_duration` dari setiap bulannya, kit
 # your code here
 ```
 
-Sekarang kita dapat mulai melakukan agregasi data untuk mendapatkan rata-rata (mean) dari durasi waktu pembiayaan (`funding duration`) untuk tiap bulannya (`month`) dan tiap jangka waktu pengembalian (`repayment interval`). Simpan hasil aggregasi data pada sebuah objek dengan nama `loan_agg`:
+Sekarang kita dapat mulai melakukan agregasi data untuk mendapatkan rata-rata (mean) dari durasi waktu pembiayaan (`funding duration`) per bulannya (`month`) untuk tiap jangka waktu pengembalian (`repayment interval`). Simpan hasil aggregasi data pada sebuah objek dengan nama `loan_agg`:
 
 ```{r}
 # your code here
 ```
 
-5. Pada bulan apa dan dengan jangka waktu pengembalian apa yang memiliki durasi waktu pembiayaan terlama?
+5. Pada bulan apa dan dengan *repayment interval* apa yang memiliki *funding duration* terlama?
 
    - [ ] monthly repayment interval in April
    - [ ] bullet repayment interval in January
    - [ ] monthly repayment interval in March
 
-Setelah data dipersiapkan, buatlah line chart untuk memvisualisasikan trend dari durasi waktu pembiayaan per bulan. Lengkapi code berikut untuk membuat visualisasi tersebut.
+Setelah data dipersiapkan, buatlah line chart untuk memvisualisasikan trend dari durasi waktu pembiayaan (*funding duration*) per bulan. Lengkapi code berikut untuk membuat visualisasi tersebut.
 
 ```{r}
 # ggplot(loan_agg, aes(x = ........, y = ........., color = ......, group = repayment_interval))+

@@ -1,7 +1,7 @@
 ---
 title: "Data Visualization Quiz"
 author: "Arga Adyatama"
-date: "1/15/2020"
+date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -39,7 +39,7 @@ ___
 
 ## Analyzing Data Distribution
 
-1. By visualizing the distribution of `lender_count` variable, we can find which range has the highest frequency of data occurrence. Say, we are interested in finding out the range of `lender_count` which is most likely to occur, for all loans in the United States. You may need to check the distribution of the `lender_count` variable using a histogram or density chart.
+1. By visualizing the distribution of numerical variable, we can find which range has the highest frequency of data occurrence. Say, we are interested in finding out the range of `lender_count` which is most likely to occur, for all loans in the United States. You may need to check the distribution of the `lender_count` variable using a histogram or density chart.
 
 First, you need to subset all loans from the United States:
 ```{r}
@@ -109,7 +109,7 @@ For exploratory purposes, find out the range of the posted time:
 
    - [ ] 2015-01-01 01:27:00 UTC and 2015-12-31 05:54:25 UTC
    - [ ] 2015-01-01 03:34:51 UTC and 2015-12-31 05:54:25 UTC
-   - [ ] 2015-01-01 01:27:00 UTC and 2015-12-31 23:04:04 UTC
+   - [ ] 2015-01-01 01:27:00 UTC and 2015-12-31 14:44:55 UTC
    - [ ] 2015-01-01 00:42:30 UTC and 2015-12-31 05:54:25 UTC
 
 Now we are set to calculate the duration from a loan being posted until it was fully funded. We need to create a new column that contains the difference between the funded time and posted time. We will call it **funding_duration**.  
